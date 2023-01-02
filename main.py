@@ -1,5 +1,7 @@
 import pandas as pd
+from sklearn import tree
 from sklearn.tree import DecisionTreeClassifier
+from matplotlib import pyplot as plt
 
 # Read the file:
 oriDataset: pd.DataFrame = pd.read_csv("E:\School Stuffs\Bachelor in Computer Science\Year 2\Sem 1\Artificial intelligence\Group assignment\Species_clustering_classification.csv")
@@ -40,3 +42,11 @@ def GetValKey(dictionary: dict, key: str)->float:
         return val
     else:
         return None
+
+# Save the tree diagram:
+def SaveTreeDiagram(saveFileName: str="TreeDiagram.png"):
+    tree.plot_tree(dTree, feature_names=dataset.columns)
+    plt.savefig(saveFileName)
+
+SaveTreeDiagram()
+print(Predict([0,1,2,3,4]))
