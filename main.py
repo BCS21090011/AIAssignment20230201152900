@@ -4,7 +4,7 @@ from sklearn.tree import DecisionTreeClassifier
 from matplotlib import pyplot as plt
 
 # Read the file:
-oriDataset: pd.DataFrame = pd.read_csv("E:\School Stuffs\Bachelor in Computer Science\Year 2\Sem 1\Artificial intelligence\Group assignment\Species_clustering_classification.csv")
+oriDataset: pd.DataFrame = pd.read_csv("Dataset.csv")
 
 healthDict: dict = oriDataset[["health", "health_number"]].set_index("health").to_dict()["health_number"]   # Contain the values in "health" as key and it's respective "health_number" as value.
 speciesDict: dict = oriDataset[["species", "species_number"]].set_index("species").to_dict()["species_number"]  # Contain the values in "species" as key and it's respective "species_number" as value.
