@@ -47,6 +47,3 @@ def GetValKey(dictionary: dict, key: str)->float:
 def SaveTreeDiagram(saveFileName: str="TreeDiagram.png"):
     tree.plot_tree(dTree, feature_names=dataset.columns)
     plt.savefig(saveFileName)
-
-SaveTreeDiagram()
-print(Predict([0,1,2,3,4]))
