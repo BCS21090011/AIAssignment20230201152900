@@ -16,11 +16,12 @@ X: pd.DataFrame = dataset[inputCols]
 y: pd.Series = dataset[outputCols]
 
 dTree: DecisionTreeClassifier = DecisionTreeClassifier()
-dTree = dTree.fit(X, y)
+dTree = dTree.fit(X.values, y.values)
 
 # Predict will only take 2d list.
-def Predict(inputVals: list[list])->int:
-    predResult: int = dTree.predict(inputVals)[0]
+def Predict(inputVals: list)->int:
+    vals: list[list] = [inputVals]
+    predResult: int = dTree.predict(vals)[0]
     return predResult
 
 def GetKeyVal(dictionary: dict, val: float)->str:
