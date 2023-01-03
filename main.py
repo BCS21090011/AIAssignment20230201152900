@@ -69,7 +69,7 @@ if __name__ == "__main__":
             valid = True
         else:
             if userInput[0] == '-': # If it is negative:
-                valid = userInput[1:]   # Check if the rest is valid.
+                valid = Validate(userInput[1:])   # Check if the rest is valid.
 
                 if userInput[1:] == "": # If the rest is empty.
                     valid = True
